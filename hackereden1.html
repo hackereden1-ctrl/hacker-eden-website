@@ -1,0 +1,282 @@
+<!-- Save this file as hacker-eden-website.html and open it in VS Code. Use Live Server to preview. -->
+<!doctype html>
+<html lang="rw">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hacker Eden — Cybersecurity Project</title>
+  <meta name="description" content="Welcome to Hacker Eden — aho ubuhanga buhurira n'ikoranabuhanga. Cybersecurity & hacking projects." />
+  <style>
+    /* Base / White theme */
+    :root{--accent:#111827;--accent-2:#2563eb;--muted:#6b7280;--gold:#fbbf24}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#ffffff;color:#111827;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+
+    /* Layout */
+    header{background:#ffffff;border-bottom:1px solid #e6e6e6;padding:18px 24px;position:sticky;top:0;z-index:40}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;background:var(--accent-2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav{display:flex;gap:18px;margin-left:auto}
+    nav a{padding:8px 10px;border-radius:8px;font-weight:600;color:var(--accent)}
+    nav a:hover{background:#f3f4f6}
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);padding:68px 0;text-align:center}
+    .hero h1{font-size:34px;margin-bottom:12px}
+    .hero p{color:var(--muted);max-width:760px;margin:0 auto 20px}
+    .btn{display:inline-block;padding:12px 20px;border-radius:10px;background:var(--accent-2);color:#fff;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--accent);border:2px solid #e6e6e6}
+
+    /* Sections */
+    section{padding:48px 0}
+    h2{font-size:24px;margin-bottom:14px}
+    .lead{color:var(--muted);max-width:880px;margin-bottom:18px}
+
+    /* Services / Cards */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;padding:18px;border-radius:12px;border:1px solid #f1f5f9;box-shadow:0 6px 18px rgba(16,24,40,0.03)}
+    .card h3{color:var(--accent-2);margin-bottom:8px}
+
+    /* Projects (portfolio) */
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{border-radius:10px;overflow:hidden;border:1px solid #eef2ff}
+    .project img{width:100%;height:160px;object-fit:cover;display:block}
+    .project .pbody{padding:12px}
+
+    /* Testimonials */
+    .testi{display:flex;gap:12px;align-items:center}
+    .avatar{width:56px;height:56px;border-radius:999px;background:#f3f4f6;display:inline-flex;align-items:center;justify-content:center}
+
+    /* Contact & Footer */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .footer{padding:28px 0;background:#f8fafc;border-top:1px solid #eef2ff;margin-top:28px}
+
+    /* Login page (hidden view) */
+    .view{display:none}
+    .view.active{display:block}
+    .login-card{max-width:420px;margin:18px auto;padding:22px;border-radius:12px;border:1px solid #e6e6e6;background:#fff}
+    label{display:block;margin-bottom:6px;font-weight:600}
+    input{width:100%;padding:10px;border:1px solid #e6e6e6;border-radius:8px;margin-bottom:12px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Responsive */
+    @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}nav{display:none}.hero h1{font-size:26px}}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container" style="display:flex;align-items:center">
+      <div class="brand">
+        <div class="logo">HE</div>
+        <div>
+          <div style="font-weight:800">Hacker Eden</div>
+          <div class="small" style="font-size:12px;color:var(--muted)">Cybersecurity & Hacking Projects</div>
+        </div>
+      </div>
+
+      <nav id="mainNav">
+        <a href="#home" data-link>Ahabanza</a>
+        <a href="#about" data-link>Ibyerekeye</a>
+        <a href="#services" data-link>Serivisi</a>
+        <a href="#projects" data-link>Projects</a>
+        <a href="#contact" data-link>Twandikire</a>
+        <a href="#login" id="navLogin">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN SINGLE-PAGE VIEWS -->
+  <main>
+    <!-- Home View -->
+    <section id="home" class="view active">
+      <div class="hero container">
+        <h1>Welcome to Hacker Eden</h1>
+        <p class="lead">Murakaza neza kuri Hacker Eden — aho ubuhanga buhurira n'ikoranabuhanga. Twubaka ama projects ya cybersecurity, tutorials, n'ibindi bigufasha kuba umunyamwuga mu mutekano w'ikoranabuhanga.</p>
+        <div>
+          <a class="btn" href="#projects" data-link>Reba Projects</a>
+          <a class="btn ghost" href="#about" data-link style="margin-left:12px">Menya byinshi</a>
+        </div>
+      </div>
+
+      <section class="container" style="padding-top:26px">
+        <h2>Icyo dukora</h2>
+        <p class="lead">Dutanga serivisi zose zifasha abantu n'ibigo kurinda system zabo no gukora penetration testing, training, na consulting.</p>
+        <div class="grid" style="margin-top:18px">
+          <div class="card"><h3>Penetration Testing</h3><p>Gusuzuma intege nke za system ziri online n'iz'imbere mu biro.</p></div>
+          <div class="card"><h3>Incident Response</h3><p>Gufasha mu gihe habaye security breach no kugabanya ingaruka.</p></div>
+          <div class="card"><h3>Training & Workshops</h3><p>Amashuri y'ibanze n'ayimbitse ku mutekano w'ikoranabuhanga.</p></div>
+        </div>
+      </section>
+    </section>
+
+    <!-- About View -->
+    <section id="about" class="view">
+      <div class="container">
+        <h2>Ibyerekeye Hacker Eden</h2>
+        <p class="lead">Hacker Eden ni umushinga ugamije gutanga ubumenyi n'ubuyobozi mu byerekeye cybersecurity, hacking yemewe (ethical hacking), na awareness ku barimo kuyobora tekiniki zitandukanye.</p>
+
+        <div style="display:flex;gap:18px;margin-top:20px;flex-wrap:wrap">
+          <div style="flex:1;min-width:220px">
+            <h3>Mission</h3>
+            <p>Gutoza abantu no gutanga services zizewe z'umutekano w'ikoranabuhanga.</p>
+          </div>
+          <div style="flex:1;min-width:220px">
+            <h3>Vision</h3>
+            <p>Kuba hub hubu humvikanwaho mu karere ku bijyanye na cybersecurity education na services.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services View -->
+    <section id="services" class="view">
+      <div class="container">
+        <h2>Serivisi</h2>
+        <p class="lead">Dushobora kugufasha mu byiciro bitandukanye — reba ingero hasi.</p>
+        <div class="grid" style="margin-top:18px">
+          <div class="card"><h3>Network Security</h3><p>Configuration review, firewall hardening, na monitoring.</p></div>
+          <div class="card"><h3>Web App Security</h3><p>OWASP-based testing, code review, na remediation support.</p></div>
+          <div class="card"><h3>Cloud Security</h3><p>Security posture management ku ma cloud providers nk'AWS/GCP/Azure.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects / Portfolio View -->
+    <section id="projects" class="view">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="lead">Imishinga yacu n'ibikorwa twakoze (sample snapshots).</p>
+        <div class="projects" style="margin-top:18px">
+          <div class="project"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcd" alt="project"><div class="pbody"><h3>Network Audit</h3><p>Audit y'ibigo bikomeye mu karere.</p></div></div>
+          <div class="project"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcd" alt="project"><div class="pbody"><h3>Web App Pentest</h3><p>Pentest kuri e-commerce platform.</p></div></div>
+          <div class="project"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcd" alt="project"><div class="pbody"><h3>Training Series</h3><p>Workshops ku bashaka kumenya penetration testing.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact View -->
+    <section id="contact" class="view">
+      <div class="container">
+        <h2>Twandikire</h2>
+        <p class="lead">Waba ushaka service cyangwa ufite ikibazo — twandikire ukoresheje aya makuru cyangwa ukoreshe form.</p>
+
+        <div class="contact-grid" style="margin-top:18px">
+          <div>
+            <h3>Contact details</h3>
+            <p class="small">Email: <a href="mailto:hackereden1@gmail.com">hackereden1@gmail.com</a></p>
+            <p class="small">Phone: <a href="tel:+250795167845">+250 795 167 845</a></p>
+            <p class="small">Social: GitHub / LinkedIn / Twitter (add your links)</p>
+          </div>
+          <div>
+            <h3>Send a message</h3>
+            <form id="contactForm">
+              <input type="text" id="cname" placeholder="Izina ryawe" required />
+              <input type="email" id="cemail" placeholder="Email yawe" required />
+              <textarea id="cmsg" rows="5" placeholder="Ubutumwa bwawe" required></textarea>
+              <button class="btn" type="submit">Ohereza</button>
+            </form>
+            <p id="cstatus" class="small" style="margin-top:8px"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login View -->
+    <section id="login" class="view">
+      <div class="container">
+        <div class="login-card">
+          <h2 style="text-align:center;margin-bottom:8px">Login — Hacker Eden</h2>
+          <p class="small" style="text-align:center;margin-bottom:12px">Injira ukoresheje konti yawe</p>
+          <form id="loginForm">
+            <label for="u">hackereden1</label>
+            <input id="u" type="text" value="hackereden1" readonly />
+            <label for="p">hackereden1 Password</label>
+            <input id="p" type="password" placeholder="you need hacker eden1 kugirango akubwire passoword" required />
+            <button class="btn" type="submit">Injira</button>
+            <p id="lstatus" class="small" style="margin-top:10px"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+      <div>&copy; 2025 Hacker Eden niba ucyeneye kuba umu hacker turacyeneranya ngo twungurane ubumenyi </div>
+      <div class="small">Welcome to Hacker Eden — aho ubuhanga buhurira n'ikoranabuhanga tugomba kwiga hacking byanga byakunda  eden naje ndigisubizo </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple single-file routing: show/hide views by id
+    document.querySelectorAll('[data-link]').forEach(el=>{el.addEventListener('click', (e)=>{
+      e.preventDefault(); const href = el.getAttribute('href').slice(1); showView(href);
+    })});
+    document.getElementById('navLogin').addEventListener('click', (e)=>{e.preventDefault(); showView('login');});
+
+    function showView(id){
+      document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+      const target = document.getElementById(id);
+      if(target){target.classList.add('active'); window.scrollTo(0,0)}
+    }
+
+    // Contact form: fake submit (no backend) — show message
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('cname').value;
+      document.getElementById('cstatus').innerText = `Murakoze ${name}! Ubutumwa bwawe bwakiriwe — tuzagusubiza vuba.`;
+      this.reset();
+    });
+
+    // Login form: fake check (password: "hackereden1")
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const p = document.getElementById('p').value;
+      const st = document.getElementById('lstatus');
+    
+
+    });
+
+    // On load, show home
+    showView('home');
+  </script>
+</body>
+</html>
+<script>
+  // ...ibindi byariho...
+
+  // Login form: fake check (password: "hackereden1")
+  document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const p = document.getElementById('p').value;
+    const st = document.getElementById('lstatus');
+
+    if(!p){
+      st.innerText = 'Shyiramo password yawe.';
+      return;
+    }
+
+    // Replace this string if you want a different demo password
+    const DEMO_PASS = 'hackereden1';
+
+    if(p === DEMO_PASS){
+      st.style.color = 'green';
+      st.innerText = 'Winjiye neza — murakaza neza!';
+      // optional: go to home view
+      showView('home');
+    } else {
+      st.style.color = 'crimson';
+      st.innerText = 'Password siyo — gerageza wongere.';
+    }
+  });
+
+  // On load, show home
+  showView('home');
+</script>
